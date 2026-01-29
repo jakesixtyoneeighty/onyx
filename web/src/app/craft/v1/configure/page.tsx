@@ -356,7 +356,7 @@ export default function BuildConfigPage() {
       <SettingsLayouts.Root>
         <SettingsLayouts.Header
           icon={SvgPlug}
-          title="Configure Onyx Craft"
+          title="Configure MojoCode"
           description="Select data sources and your default LLM"
           rightChildren={
             <div className="flex items-center gap-2">
@@ -433,11 +433,10 @@ export default function BuildConfigPage() {
                   }
                 >
                   <div
-                    className={`w-full ${
-                      isUpdating || isPreProvisioning
+                    className={`w-full ${isUpdating || isPreProvisioning
                         ? "pointer-events-none"
                         : ""
-                    }`}
+                      }`}
                   >
                     <InputLayouts.Horizontal
                       title="Default LLM"
@@ -500,20 +499,19 @@ export default function BuildConfigPage() {
                         padding={0.75}
                         className={
                           !hasConnectorEverSucceeded ||
-                          isUpdating ||
-                          isPreProvisioning
+                            isUpdating ||
+                            isPreProvisioning
                             ? "opacity-50"
                             : ""
                         }
                       >
                         <div
-                          className={`flex items-center gap-3 ${
-                            !hasConnectorEverSucceeded ||
-                            isUpdating ||
-                            isPreProvisioning
+                          className={`flex items-center gap-3 ${!hasConnectorEverSucceeded ||
+                              isUpdating ||
+                              isPreProvisioning
                               ? "pointer-events-none"
                               : ""
-                          }`}
+                            }`}
                         >
                           <div className="flex items-center gap-2">
                             <SimpleTooltip tooltip="The demo dataset contains 1000 files across various connectors">

@@ -56,7 +56,7 @@ export default function NoLlmProvidersModal({
                 LLM Provider Required
               </Text>
               <Text mainUiBody text03 className="max-w-sm">
-                Onyx Craft requires an LLM provider to be configured, but only
+                MojoCode requires an LLM provider to be configured, but only
                 admins can set this up.
                 <br />
                 <br />

@@ -31,7 +31,7 @@ while [[ $# -gt 0 ]]; do
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
-            echo "  --include-craft  Enable Onyx Craft (AI-powered web app building)"
+            echo "  --include-craft  Enable MojoCode (AI-powered web app building)"
             echo "  --shutdown       Stop (pause) Onyx containers"
             echo "  --delete-data    Remove all Onyx data (containers, volumes, and files)"
             echo "  --help, -h       Show this help message"
@@ -670,9 +670,9 @@ else
     if [ "$INCLUDE_CRAFT" = true ] || [[ "$VERSION" == craft-* ]]; then
         # Set ENABLE_CRAFT=true for runtime configuration (handles commented and uncommented lines)
         sed -i.bak 's/^#* *ENABLE_CRAFT=.*/ENABLE_CRAFT=true/' "$ENV_FILE" 2>/dev/null || true
-        print_success "Onyx Craft enabled (ENABLE_CRAFT=true)"
+        print_success "MojoCode enabled (ENABLE_CRAFT=true)"
     else
-        print_info "Onyx Craft disabled (use --include-craft to enable)"
+        print_info "MojoCode disabled (use --include-craft to enable)"
     fi
 
     print_success ".env file created with your preferences"
@@ -682,7 +682,7 @@ else
     echo "  • Advanced authentication (OAuth, SAML, etc.)"
     echo "  • AI model configuration"
     echo "  • Domain settings (for production)"
-    echo "  • Onyx Craft (set ENABLE_CRAFT=true)"
+    echo "  • MojoCode (set ENABLE_CRAFT=true)"
     echo ""
 fi
 

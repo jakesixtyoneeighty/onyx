@@ -193,19 +193,19 @@ const MemoizedAppSidebarInner = memo(
       Notification[]
     >("/api/notifications", errorHandlingFetcher);
 
-    // Check if Onyx Craft is enabled via settings (backed by PostHog feature flag)
+    // Check if MojoCode is enabled via settings (backed by PostHog feature flag)
     // Only explicit true enables the feature; false or undefined = disabled
     const isOnyxCraftEnabled =
       combinedSettings?.settings?.onyx_craft_enabled === true;
 
-    // Find build_mode feature announcement notification (only if Onyx Craft is enabled)
+    // Find build_mode feature announcement notification (only if MojoCode is enabled)
     const buildModeNotification = isOnyxCraftEnabled
       ? notifications?.find(
-          (n) =>
-            n.notif_type === NotificationType.FEATURE_ANNOUNCEMENT &&
-            n.additional_data?.feature === "build_mode" &&
-            !n.dismissed
-        )
+        (n) =>
+          n.notif_type === NotificationType.FEATURE_ANNOUNCEMENT &&
+          n.additional_data?.feature === "build_mode" &&
+          !n.dismissed
+      )
       : undefined;
 
     // State for intro animation overlay

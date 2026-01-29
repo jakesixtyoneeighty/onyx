@@ -264,7 +264,7 @@ def validate_file(
 # Build Mode Feature Announcements
 # =============================================================================
 
-# PostHog feature flag key for enabling Onyx Craft (cloud rollout control)
+# PostHog feature flag key for enabling MojoCode (cloud rollout control)
 # Flag logic: True = enabled, False/null/not found = disabled
 ONYX_CRAFT_ENABLED_FLAG = "onyx-craft-enabled"
 
@@ -274,12 +274,12 @@ BUILD_MODE_FEATURE_ID = "build_mode"
 
 def is_onyx_craft_enabled(user: User) -> bool:
     """
-    Check if Onyx Craft (Build Mode) is enabled for the user.
+    Check if MojoCode (Build Mode) is enabled for the user.
 
     Flag logic for "onyx-craft-enabled":
-    - Flag = True → enabled (Onyx Craft is available)
-    - Flag = False → disabled (Onyx Craft is not available)
-    - Flag = null/not found → disabled (Onyx Craft is not available)
+    - Flag = True → enabled (MojoCode is available)
+    - Flag = False → disabled (MojoCode is not available)
+    - Flag = null/not found → disabled (MojoCode is not available)
 
     Only explicit True enables the feature.
     """
@@ -296,10 +296,10 @@ def is_onyx_craft_enabled(user: User) -> bool:
     )
 
     if is_enabled:
-        logger.debug("Onyx Craft enabled via PostHog feature flag")
+        logger.debug("MojoCode enabled via PostHog feature flag")
         return True
     else:
-        logger.debug("Onyx Craft disabled via PostHog feature flag")
+        logger.debug("MojoCode disabled via PostHog feature flag")
         return False
 
 
@@ -310,7 +310,7 @@ def ensure_build_mode_intro_notification(user: User, db_session: Session) -> Non
     Called from /api/notifications endpoint. Uses notification deduplication
     to ensure each user only gets one notification.
     """
-    # PostHog feature flag check - only show notification if Onyx Craft is enabled
+    # PostHog feature flag check - only show notification if MojoCode is enabled
     if not is_onyx_craft_enabled(user):
         return
 
@@ -319,7 +319,7 @@ def ensure_build_mode_intro_notification(user: User, db_session: Session) -> Non
         user_id=user.id,
         notif_type=NotificationType.FEATURE_ANNOUNCEMENT,
         db_session=db_session,
-        title="Introducing Onyx Craft",
+        title="Introducing MojoCode",
         description="Unleash Onyx to create dashboards, slides, documents, and more with your connected data.",
         additional_data={"feature": BUILD_MODE_FEATURE_ID},
     )

@@ -447,7 +447,7 @@ export default function BuildOnboardingModal({
             />
           )}
 
-          {/* Page 1 - What is Onyx Craft? */}
+          {/* Page 1 - What is MojoCode? */}
           {currentStep === "page1" && (
             <OnboardingInfoPages
               step="page1"
