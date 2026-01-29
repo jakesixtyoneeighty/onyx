@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Onyx Craft",
-  description: "Crafting your next great idea.",
+  title: "MojoCode",
+  description: "Building some cool shit, inside this other shit.",
 };
 
 export default function RootLayout({

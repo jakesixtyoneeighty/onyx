@@ -3,14 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 
 const messages = [
-  "Punching wood...",
-  "Gathering resources...",
-  "Placing blocks...",
-  "Crafting your workspace...",
-  "Mining for dependencies...",
+  "Clanging and banging...",
+  "Hitting it hard, Hitting it fast..",
+  "Laying some carpet...",
+  "Giving it the ol' Mojo shine...",
+  "Even taking care of the dependencies...",
   "Smelting the code...",
-  "Enchanting with magic...",
-  "World generation complete...",
+  "Enchanting like I'm playing World of Warcraft...",
+  "Fucking right doggy, that's good cake..",
   "/gamemode 1",
 ];
 
@@ -127,7 +127,7 @@ export default function CraftingLoader() {
       </div>
 
       <p className="mt-6 text-neutral-500 text-sm font-mono">
-        Crafting your next great idea...
+        Building an app called badassmotherfucker dot com..
       </p>
     </div>
   );

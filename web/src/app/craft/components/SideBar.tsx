@@ -371,7 +371,7 @@ const MemoizedBuildSidebarInner = memo(
           folded={folded}
           onClick={handleNewBuild}
         >
-          Start Crafting
+          Click for Gnarlyness
         </SidebarTab>
       ),
       [folded, handleNewBuild]
