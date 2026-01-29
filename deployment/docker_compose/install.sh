@@ -220,7 +220,7 @@ else
 fi
 
 # GitHub repo base URL - using main branch
-GITHUB_RAW_URL="https://raw.githubusercontent.com/onyx-dot-app/onyx/main/deployment/docker_compose"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/jakesixtyoneeighty/onyx/main/deployment/docker_compose"
 
 # Check system requirements
 print_step "Verifying Docker installation"
